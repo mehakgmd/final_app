@@ -7,3 +7,4 @@ const   ProductCarousel: FC<{ProductData: Array<oneProductType>}>= ({ ProductDat
     <div>ProductCarousel</div>
   )
 }
+export  default ProductCarousel
