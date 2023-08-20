@@ -74,8 +74,8 @@ export  function MobileNavbar() {
                 NavbarArray.map((item: NavbarItemType, index: number)=> {
                     return (
               
-                            <div>
-                                <Expand key={index} item={item}/>
+                            <div key={index}>
+                                <Expand item={item}/>
                     </div>
                        
                     )
