@@ -16,7 +16,7 @@ return (
   <div className="sticky top-0 background-blur-lg bg-gradient-to-tr from-white via-[#ffffffde] to-opacityDownColor z-20">
   <div className=" py-5 flex justify-between items-center space-x-12">
     <div className="w-36 py-2 flex-shrink-0">
-    <Image width={500} height={500} src={"/logo.webp"} alt={"Logo"}/>
+    <Image width={500} height={500} src={"/Logo.webp"} alt={"Logo"}/>
    
     </div>
     <div className="hidden lg:flex justify-between items-center w-full ">
