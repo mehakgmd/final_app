@@ -10,49 +10,49 @@ export interface NavbarItemType {
 export const NavbarArray: Array<NavbarItemType> = [
     {
         label: "Female",
-        href: "/female/Female",
+        href: "/female/female",
         isDropDown: true,
         dropDownData: [
             {
                 label: "Dresses",
-                href: "/female/Dress",
+                href: "/female/dress",
                 isDropDown: false,
             },
             {
                 label: "T-Shirts",
-                href: "/female/T-shirt",
+                href: "/female/t-shirt",
                 isDropDown: false,
             },
             {
                 label: "Pents",
-                href: "/female/Pant",
+                href: "/female/pant",
                 isDropDown: false,
             },
             {
                 label: "Jackets",
-                href: "/female/Jacket",
+                href: "/female/jacket",
                 isDropDown: false,
             },
             {
                 label: "Sweater",
-                href: "/female/Sweater",
+                href: "/female/sweater",
                 isDropDown: false,
             },
         ]
     },
     {
         label: "Male",
-        href: "/male/Male",
+        href: "/male/male",
         isDropDown: true,
         dropDownData: [
             {
                 label: "Sweaters",
-                href: "/male/Sweater",
+                href: "/male/sweater",
                 isDropDown: false,
             },
             {
                 label: "Jackets",
-                href: "/male/Jacket",
+                href: "/male/jacket",
                 isDropDown: false,
             },
         ]
