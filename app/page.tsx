@@ -33,6 +33,7 @@ async function fetchAllProductData(){
     throw new Error("Failed")
   }
   return res.json();
+  // return {response: "Hi"}
 }
 
 export default async  function Home(){
@@ -42,7 +43,7 @@ export default async  function Home(){
     <div>
       <Hero/>
       <ProductsType/>
-      <ProductCarousel ProductData={response}/>
+      <ProductCarousel ProductData={response} />
          </div>
   )
 }
