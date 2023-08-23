@@ -37,7 +37,7 @@ async function fetchAllProductData(){
 }
 
 export default async  function Home(){
-  let  {response} = await fetchAllProductData();
+  let  { response } = await fetchAllProductData();
   
   return (
     <div>

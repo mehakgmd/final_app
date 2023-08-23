@@ -1,8 +1,5 @@
 "use client"
-import {oneProductType} from "@/components/utils/ProductsDataArrayAndType"
-import React, { FC } from 'react'
-
-const ProductCarousel: FC<{ ProductData: Array<oneProductType> }> = ({ ProductData }) => {
+const ProductCarousel = ({ ProductData }:any) => {
   return (
     <div>{ProductData[0].productName}</div>
   )
