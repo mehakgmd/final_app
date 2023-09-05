@@ -1,14 +1,9 @@
 import { NextResponse } from "next/server";
 import { createClient } from "next-sanity";
 import { SanityClient } from "sanity";
+import { client } from "@/lib/sanityClient";
 
-const client: SanityClient = createClient ({
-    projectId: `${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`,
-    dataset: "production",
-    apiVersion: "2023-07-30",
-    useCdn: false
 
-});
 export  async function GET() {
     try{
        let response = await client.fetch(`*[_type == "products"]`);

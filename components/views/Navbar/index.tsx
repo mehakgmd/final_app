@@ -15,10 +15,10 @@ export default function Navbar() {
 return (
   <div className="sticky top-0 background-blur-lg bg-gradient-to-tr from-white via-[#ffffffde] to-opacityDownColor z-20">
   <div className=" py-5 flex justify-between items-center space-x-12">
-    <div className="w-36 py-2 flex-shrink-0">
+    <Link className="w-36 py-2 flex-shrink-0" href={"/"}>
     <Image width={500} height={500} src={"/Logo.webp"} alt={"Logo"}/>
    
-    </div>
+    </Link>
     <div className="hidden lg:flex justify-between items-center w-full ">
     <ul className="flex space-x-4 font-medium text-lg text-black-950">
       {NavbarArray.map((item: NavbarItemType, index: number) => (
