@@ -9,10 +9,18 @@ import { useState } from "react"
 import { IoMdClose } from "react-icons/io"
 import { GiHamburgerMenu } from "react-icons/gi"
 import Expand from "./subComponents/Expand"
+import router from "next/router"
 export default function Navbar() {
+  
   const [isNavbarOpen, setNavbarOpen] = useState<boolean>(false);
   const [cartItemNumebr, setCartItemNumber,] = useState<number>(0)
-return (
+  const [searchQuery, setSearchQuery] = useState("")
+   function handleSearchCalledFunc(e: any) {
+        if (e.key === "Enter" && e.keyCode === 13) {
+            router.push(`/search/${searchQuery}`);
+        }
+    }
+  return (
   <div className="sticky top-0 background-blur-lg bg-gradient-to-tr from-white via-[#ffffffde] to-opacityDownColor z-20">
   <div className=" py-5 flex justify-between items-center space-x-12">
     <Link className="w-36 py-2 flex-shrink-0" href={"/"}>
@@ -33,10 +41,13 @@ return (
                         </ul>
 
   <div className=" border flex items-center text-grey-600 px-3 rounded-md">
-    <BsSearchHeart/>
+    <Link href={`/search/${searchQuery}`}><BsSearchHeart/></Link>
     <input
-     type="Search"
-      className="focusoutline-none pl-2 pr-5 py-1  w-80" 
+     type="text"
+     value={searchQuery}
+     onKeyDown = {handleSearchCalledFunc}
+     onChange={(e)=> setSearchQuery(e.target.value)}
+      className="focus: outline-none pl-1 pr-6 py-1 w-80 rounded-r-md" 
       placeholder="Search in Our Store "
        />
   </div>

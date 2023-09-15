@@ -24,11 +24,11 @@ export default async function Home() {
   let { result }: responseType = await fetchAllProductsData();
   return (
     <div className="overflow-hidden">
-       <Hero />
-      <ProductsType />
+       {/* <Hero />
+      <ProductsType /> */}
       <ProductCarousel ProductData={result} /> 
-      <Jewellery />
-      <Newsletter /> 
+      {/* <Jewellery />
+      <Newsletter />  */}
     </div>
   )
 }
