@@ -58,7 +58,7 @@ function decrementTheQuantity(){
            <div className="flex gap-2 text-pink-600">
             {
               item.size.map((subItem: string, index: number)=>(
-                <div className="hover:shadow-xl font-semibold cursor-pointer rounded-full bg-gray-100 w-12 h-12 flex justify-center items-center">{subItem}</div>
+                <div key={index} className="hover:shadow-xl font-semibold cursor-pointer rounded-full bg-gray-100 w-12 h-12 flex justify-center items-center">{subItem}</div>
               ))
             }
             </div>
