@@ -26,7 +26,7 @@ export default async function Home() {
     <div className="overflow-hidden">
        {/* <Hero />
       <ProductsType /> */}
-      <ProductCarousel ProductData={result} /> 
+      {/* <ProductCarousel ProductData={result} />  */}
       {/* <Jewellery />
       <Newsletter />  */}
     </div>

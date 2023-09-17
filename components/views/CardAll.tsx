@@ -24,7 +24,7 @@ const CardAll: FC<{ singleProductData: oneProductType }> = ({ singleProductData 
         <Image width={1000} height={1000} src={imageSrc} alt={singleProductData.image?.[0]?.alt || 'Product Image'} />
       </div>
       <div className='space-y-1 text-gray-600 font-semibold text-lg select-none'>
-        <Link href={`/products/${singleProductData.slug.current}`}>
+        <Link href={`/catalog/${singleProductData.slug.current}`}>
           <h6>{singleProductData.productName}</h6>
           <p className='text-sm text-pink-500'>{singleProductData.productTypes?.[0]}</p>
           <p>${singleProductData.price}</p>
