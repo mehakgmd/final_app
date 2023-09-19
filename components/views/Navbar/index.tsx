@@ -10,6 +10,8 @@ import { IoMdClose } from "react-icons/io"
 import { GiHamburgerMenu } from "react-icons/gi"
 import Expand from "./subComponents/Expand"
 import router from "next/router"
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 export default function Navbar() {
   
   const [isNavbarOpen, setNavbarOpen] = useState<boolean>(false);
@@ -20,6 +22,8 @@ export default function Navbar() {
             router.push(`/search/${searchQuery}`);
         }
     }
+    const cartValue = useSelector((state: RootState) => state.cartSlice.totalQuantity);
+
   return (
   <div className="sticky top-0 background-blur-lg bg-gradient-to-tr from-white via-[#ffffffde] to-opacityDownColor z-20">
   <div className=" py-5 flex justify-between items-center space-x-12">
@@ -53,7 +57,7 @@ export default function Navbar() {
   </div>
     <div className="relative w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center">
       <div className="w-4 h-4 absolute top-1 right-2 bg-red-400 text-xs font-light rounded-full flex justify-center item-center">
-        {cartItemNumebr}
+        {cartValue}
       </div>
       <BsCart2 size={24}/>
     </div>
