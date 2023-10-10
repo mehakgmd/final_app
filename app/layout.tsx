@@ -3,7 +3,7 @@ import './globals.css'
 import { Maven_Pro, Roboto } from 'next/font/google'
 import Wrapper from '@/components/shared/Wrapper'
 import Footer from '@/components/views/Footer'
-import Providers from '@/components/shared/Provider'
+import TopLabel from '@/components/views/TopLabel'
 const inter  = Maven_Pro ({subsets: ['latin'],
 weight: ["400", "500", "600" , "700", "800" , "900"]
 })
@@ -20,13 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Wrapper>
-          <Providers>
+      <div className='overflow-hidden w-screen'>
+          <TopLabel />
+        </div>
+        <Wrapper> 
         <Navbar/>
        <div className='min-h-screen'> {children}
        </div>
-        <Footer/>
-        </Providers>
+        {/* <Footer/> */}
+      
         </Wrapper>
         </body>
     </html>

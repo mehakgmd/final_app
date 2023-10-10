@@ -10,21 +10,20 @@ import { IoMdClose } from "react-icons/io"
 import { GiHamburgerMenu } from "react-icons/gi"
 import Expand from "./subComponents/Expand"
 import router from "next/router"
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+import ContextWrapper from "@/global/Context"
+import Cartstate from "./subComponents/Cartstate"
 export default function Navbar() {
   
   const [isNavbarOpen, setNavbarOpen] = useState<boolean>(false);
-  const [cartItemNumebr, setCartItemNumber,] = useState<number>(0)
   const [searchQuery, setSearchQuery] = useState("")
    function handleSearchCalledFunc(e: any) {
         if (e.key === "Enter" && e.keyCode === 13) {
             router.push(`/search/${searchQuery}`);
         }
     }
-    const cartValue = useSelector((state: RootState) => state.cartSlice.totalQuantity);
 
   return (
+    <ContextWrapper>
   <div className="sticky top-0 background-blur-lg bg-gradient-to-tr from-white via-[#ffffffde] to-opacityDownColor z-20">
   <div className=" py-5 flex justify-between items-center space-x-12">
     <Link className="w-36 py-2 flex-shrink-0" href={"/"}>
@@ -55,11 +54,17 @@ export default function Navbar() {
       placeholder="Search in Our Store "
        />
   </div>
-    <div className="relative w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center">
+    {/* <div className="relative w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center">
       <div className="w-4 h-4 absolute top-1 right-2 bg-red-400 text-xs font-light rounded-full flex justify-center item-center">
-        {cartValue}
+      {cartItemNumber}
       </div>
       <BsCart2 size={24}/>
+     
+    </div> */}
+     <Cartstate/>
+    <div>
+   
+    
     </div>
     </div>
     <div className="cursor-pointer" onClick={()=> setNavbarOpen(!isNavbarOpen)}>
@@ -77,6 +82,7 @@ export default function Navbar() {
   {   
  isNavbarOpen && <MobileNavbar/>}
   </div>
+  </ContextWrapper>
   )
 }
 
